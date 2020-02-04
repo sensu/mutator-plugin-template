@@ -1,7 +1,5 @@
 builds:
-  # List of builds
-  - # First Build
-    env:
+  - env:
     - CGO_ENABLED=0
     main: main.go
     # Set the binary output location to bin/ so archive will comply with Sensu Go Asset structure
