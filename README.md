@@ -8,9 +8,9 @@ populate the templated fields with the proper values.
 
 ## Functionality
 
-After successfully creating a project from this template, update the `mutatorConfigOptions` struct in
-addition to the `executeMutator` and `checkArgs` functions in [main.go][7] to customize the behavior
-of this mutator plugin.
+After successfully creating a project from this template, update the `Config` struct with any
+configuration options for the plugin, map those values as plugin options in the variable `options`,
+and customize the `checkArgs` and `executeMutator` functions in [main.go][7].
 
 When writing or updating a plugin's README from this template, review the Sensu Community
 [plugin README style guide][3] for content suggestions and guidance. Remove everything
@@ -84,7 +84,7 @@ or create an executable script from this source.
 From the local path of the {{ .GithubProject }} repository:
 
 ```
-go build -o /usr/local/bin/{{ .GithubProject }} main.go
+go build
 ```
 
 ## Additional notes
