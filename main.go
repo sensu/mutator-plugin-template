@@ -8,39 +8,31 @@ import (
 	"github.com/sensu/sensu-go/types"
 )
 
-type MutatorConfig struct {
+// Config represents the mutator plugin config.
+type Config struct {
 	sensu.PluginConfig
 	Example string
 }
 
-type ConfigOptions struct {
-	Example sensu.PluginConfigOption
-}
-
 var (
-	mutatorConfig = MutatorConfig{
+	plugin = Config{
 		PluginConfig: sensu.PluginConfig{
 			Name:     "{{ .GithubProject }}",
 			Short:    "{{ .Description }}",
-			Timeout:  10,
 			Keyspace: "sensu.io/plugins/{{ .GithubProject }}/config",
 		},
 	}
 
-	mutatorConfigOptions = ConfigOptions{
-		Example: sensu.PluginConfigOption{
+	options := []*sensu.PluginConfigOption{
+		&sensu.PluginConfigOption{
 			Path:      "example",
 			Env:       "MUTATOR_EXAMPLE",
 			Argument:  "example",
 			Shorthand: "e",
 			Default:   "",
-			Usage:     "An example configuration option",
-			Value:     &mutatorConfig.Example,
+			Usage:     "An example string configuration option",
+			Value:     &plugin.Example,
 		},
-	}
-
-	options = []*sensu.PluginConfigOption{
-		&mutatorConfigOptions.Example,
 	}
 )
 
