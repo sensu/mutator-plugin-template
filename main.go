@@ -23,7 +23,7 @@ var (
 		},
 	}
 
-	options := []*sensu.PluginConfigOption{
+	options = []*sensu.PluginConfigOption{
 		&sensu.PluginConfigOption{
 			Path:      "example",
 			Env:       "MUTATOR_EXAMPLE",
@@ -49,6 +49,6 @@ func checkArgs(_ *types.Event) error {
 }
 
 func executeMutator(event *types.Event) (*types.Event, error) {
-	log.Println("executing mutator with --example", mutatorConfig.Example)
+	log.Println("executing mutator with --example", plugin.Example)
 	return &types.Event{}, nil
 }
