@@ -15,7 +15,7 @@ type Config struct {
 }
 
 var (
-	plugin = Config{
+	mutatorConfig = Config{
 		PluginConfig: sensu.PluginConfig{
 			Name:     "{{ .GithubProject }}",
 			Short:    "{{ .Description }}",
@@ -31,7 +31,7 @@ var (
 			Shorthand: "e",
 			Default:   "",
 			Usage:     "An example string configuration option",
-			Value:     &plugin.Example,
+			Value:     &mutatorConfig.Example,
 		},
 	}
 )
@@ -49,6 +49,6 @@ func checkArgs(_ *types.Event) error {
 }
 
 func executeMutator(event *types.Event) (*types.Event, error) {
-	log.Println("executing mutator with --example", plugin.Example)
+	log.Println("executing mutator with --example", mutatorConfig.Example)
 	return &types.Event{}, nil
 }
