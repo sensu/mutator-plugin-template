@@ -23,8 +23,8 @@ var (
 		},
 	}
 
-	options = []*sensu.PluginConfigOption{
-		&sensu.PluginConfigOption{
+	options = []sensu.ConfigOption{
+		&sensu.PluginConfigOption[string]{
 			Path:      "example",
 			Env:       "MUTATOR_EXAMPLE",
 			Argument:  "example",
