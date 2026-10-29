@@ -1,3 +1,8 @@
+> [!WARNING]
+> **This repository is scheduled to be archived on 13th November 2026.**
+>
+> After that date it will be read-only: no new commits, issues, or pull requests, and no further maintenance or security updates will be issued.
+
 {{- /* Ignore this text, until templating is ran via [sensu-plugin-tool](https://github.com/sensu-community/sensu-plugin-tool) the below badge links wiill not render */ -}}
 
 [![Sensu Bonsai Asset](https://img.shields.io/badge/Bonsai-Download%20Me-brightgreen.svg?colorB=89C967&logo=sensu)](https://bonsai.sensu.io/assets/{{ .GithubUser }}/{{ .GithubProject }})
